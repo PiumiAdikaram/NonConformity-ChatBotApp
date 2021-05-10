@@ -165,8 +165,7 @@ export default class App extends Component {
             inputEnabled: true,
             createdAt: new Date(),
             suggestedMessages: ["Hi","Tell me about ​non_conformity app","Type tag","Handler"],
-            
-            //suggestedMessages: ["Non_Conformity","Improvement_Suggestion","Critical_Notification"],
+
         };
       }
 // Sends Text to the lex runtime
