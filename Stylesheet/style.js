@@ -1,0 +1,121 @@
+const styles = StyleSheet.create({
+    
+    text:{
+        color: 'black',
+      backgroundColor: 'lightgray',
+    },
+    container: {
+        flex: 1,
+    },
+    messages: {
+        flex: 1,
+        marginTop: 20,
+    },
+    logo:{
+       width: 60,
+       height: 60,
+    },
+    
+    timestatus:{
+      color: 'black',
+      backgroundColor: 'lightgray',
+      padding: 10,
+      borderRadius: 20,       
+      alignSelf: 'flex-start',
+      textAlign: 'justify',
+    },
+    botMessages: {
+        color: 'black',
+        backgroundColor: 'white',
+        padding: 10,
+        borderBottomLeftRadius: 0,
+        borderBottomRightRadius: 20,
+        borderTopLeftRadius: 20,
+        marginBottom: 0,
+        borderTopRightRadius: 20,
+        bottom: 23,
+        //width: windowWidth * 0.75,    
+        alignSelf: 'flex-start',
+        textAlign: 'left',
+    },
+    userMessages: {
+        backgroundColor: '#4287f5',
+        color: 'white',
+        padding: 10,
+        marginBottom: 10,
+        marginRight: 10,
+        borderBottomLeftRadius: 20,
+        borderBottomRightRadius: 0,
+        borderTopLeftRadius: 20,
+        borderTopRightRadius: 20,
+        //width: windowWidth * 0.5,
+        alignSelf: 'flex-end',
+        textAlign: 'right'
+    },
+    textInput: {
+        flex: 2,
+        paddingLeft: 15
+    },
+    responseContainer : {
+        flexDirection: "column",
+        marginTop: 20,
+        marginBottom: 20,
+    },
+    inputContainer: {
+        flexDirection: 'row',
+        backgroundColor: '#EEEFFA',
+    },
+    suggestionWrapper: {
+      display: "flex",
+      flexDirection: "column",
+      justifyContent: "flex-end",    
+      alignSelf: 'flex-start',
+      textAlign: 'left',
+      padding: 10,
+      borderBottomLeftRadius: 20,
+      borderBottomRightRadius: 20,
+      borderTopLeftRadius: 20,
+      borderTopRightRadius: 20,
+      width: windowWidth * 0.35,
+         
+    },
+    suggestion: {
+        backgroundColor: "#000066",
+        paddingLeft: 10,
+        paddingRight: 10,
+        paddingTop: 10,
+        paddingBottom: 10,
+        borderRadius: 10,
+        marginRight: 10,
+        marginBottom: 2,
+        width: 'auto',
+        display: "flex",
+        alignSelf: 'flex-start',
+        textAlign: 'left',
+      },
+      suggestionText: {
+        fontWeight: "500",
+        color: "#ffffff",
+      },
+      responseCard: {
+        width: windowWidth * 0.75,
+        backgroundColor: "white",
+        flexDirection: "column",
+        padding: windowWidth * 0.05,
+        borderBottomLeftRadius: 0,
+        borderBottomRightRadius: 20,
+        borderTopLeftRadius: 20,
+        borderTopRightRadius: 20,
+      },
+      reponseCardImage: {
+        resizeMode: "contain",
+        aspectRatio: 1,
+        flex: 1,
+      },
+      responseCardButton: {
+        backgroundColor: "#4287f5",
+        padding: 25,
+        borderRadius: 10,
+        marginTop: 20,
+      },
+    });

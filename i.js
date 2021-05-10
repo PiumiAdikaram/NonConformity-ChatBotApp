@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-
+import "style.css";
 import {
     Text, 
     View, 
@@ -22,138 +22,10 @@ import { AutoScaling } from 'aws-sdk';
 let lexRunTime = new AWS.LexRuntime()
 let lexUserId = 'mediumBot' + Date.now()
 
-let createdAt= new Date().getDate();
-let hours = new Date().getHours(); 
-let min = new Date().getMinutes(); 
-//let status= new Date()
+let createdAt= new Date()
 
 const windowWidth = Dimensions.get("window").width;
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-    },
-    messages: {
-        flex: 1,
-        marginTop: 20,
-    },
-    logo:{
-       width: 60,
-       height: 60,
-    },
-    datestatus:{
-      color: 'black',
-      backgroundColor: 'lightgray',
-      padding: 10,
-      borderRadius: 20,       
-      alignSelf: 'flex-start',
-      textAlign: 'justify',
-    },
-    timestatus:{
-      color: 'white',
-      backgroundColor: 'lightgray',
-      padding: 1,
-      borderRadius: 20,  
-      display: 'flex',
-      //alignItems: 'flex-end',
 
-      alignSelf: 'flex-end',
-      //textAlign: 'right'
-    },
-    botMessages: {
-        color: 'black',
-        backgroundColor: 'white',
-        padding: 10,
-        borderBottomLeftRadius: 0,
-        borderBottomRightRadius: 20,
-        borderTopLeftRadius: 20,
-        marginBottom: 0,
-        borderTopRightRadius: 20,
-        bottom: 23,
-        //width: windowWidth * 0.75,    
-        alignSelf: 'flex-start',
-        textAlign: 'left',
-    },
-    userMessages: {
-        backgroundColor: '#4287f5',
-        color: 'white',
-        padding: 10,
-        marginBottom: 10,
-        marginRight: 10,
-        borderBottomLeftRadius: 20,
-        borderBottomRightRadius: 0,
-        borderTopLeftRadius: 20,
-        borderTopRightRadius: 20,
-        //width: windowWidth * 0.5,
-        alignSelf: 'flex-end',
-        textAlign: 'right'
-    },
-    textInput: {
-        flex: 2,
-        paddingLeft: 15
-    },
-    responseContainer : {
-        flexDirection: "column",
-        marginTop: 20,
-        marginBottom: 20,
-    },
-    inputContainer: {
-        flexDirection: 'row',
-        backgroundColor: '#EEEFFA',
-    },
-    suggestionWrapper: {
-      display: "flex",
-      flexDirection: "column",
-      justifyContent: "flex-end",    
-      alignSelf: 'flex-start',
-      textAlign: 'left',
-      padding: 10,
-      borderBottomLeftRadius: 20,
-      borderBottomRightRadius: 20,
-      borderTopLeftRadius: 20,
-      borderTopRightRadius: 20,
-      width: windowWidth * 0.35,
-         
-    },
-    suggestion: {
-        backgroundColor: "#000066",
-        paddingLeft: 10,
-        paddingRight: 10,
-        paddingTop: 10,
-        paddingBottom: 10,
-        borderRadius: 10,
-        marginRight: 10,
-        marginBottom: 2,
-        width: 'auto',
-        display: "flex",
-        alignSelf: 'flex-start',
-        textAlign: 'left',
-      },
-      suggestionText: {
-        fontWeight: "500",
-        color: "#ffffff",
-      },
-      responseCard: {
-        width: windowWidth * 0.75,
-        backgroundColor: "white",
-        flexDirection: "column",
-        padding: windowWidth * 0.05,
-        borderBottomLeftRadius: 0,
-        borderBottomRightRadius: 20,
-        borderTopLeftRadius: 20,
-        borderTopRightRadius: 20,
-      },
-      reponseCardImage: {
-        resizeMode: "contain",
-        aspectRatio: 1,
-        flex: 1,
-      },
-      responseCardButton: {
-        backgroundColor: "#4287f5",
-        padding: 25,
-        borderRadius: 10,
-        marginTop: 20,
-      },
-    });
 export default class App extends Component {
    
     constructor(props) {
@@ -164,7 +36,7 @@ export default class App extends Component {
             messages: [],
             inputEnabled: true,
             createdAt: new Date(),
-            suggestedMessages: ["Hi","Tell me about ​non_conformity app","Type tag","Handler"],
+            suggestedMessages: ["Hi","Tell me about ​non_conformity app","Type tag","Cause module"],
             
             //suggestedMessages: ["Non_Conformity","Improvement_Suggestion","Critical_Notification"],
         };
@@ -197,7 +69,8 @@ export default class App extends Component {
             botName: 'NonConformity',
             inputText: message,
             userId: lexUserId,
-            }
+            //createdAt
+        }
         lexRunTime.postText(params, (err, data) => {
             if(err) {
                 // TODO SHOW ERROR ON MESSAGES
@@ -235,7 +108,6 @@ renderTextItem(item) {
             <View style={responseStyle}>
 
                 <Text style={style}>{item.msg}</Text>
-                <Text style={styles.timestatus}>{` ${hours} `}:{` ${min} `} </Text>
                 {item.responseCard &&
           item.responseCard.genericAttachments.map((attachment, index) => {
             return (
@@ -260,6 +132,7 @@ renderTextItem(item) {
                             >{` ${button.text} `}</Text>
                       
                       </TouchableOpacity>
+                    
                     );
                   }
                 )}
@@ -275,7 +148,7 @@ render(){
           createdAt= new Date(),
             <View style={styles.container}>
                 <View style={styles.messages}>
-                <Text style={styles.datestatus}>{` ${createdAt} `} </Text>
+                <Text class="datestatus">{` ${createdAt} `} </Text>
                     <FlatList 
                    
                         data={this.state.messages}
@@ -284,7 +157,9 @@ render(){
                         extraData={this.state.messages}
                                                
                     />
-                             
+                       <FlatList 
+                        renderTextItem={({ createdAt }) =>    this.renderTextItem(createdAt)}                  
+                      />           
                 </View>
                            
                 <Image style={styles.logo}

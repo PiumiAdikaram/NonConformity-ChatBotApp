@@ -1,0 +1,116 @@
+.container{
+  flex: 1;
+}
+.messages {
+  flex: 1;
+  margin-top: 20;
+}
+.logo{
+ width: 60;
+ height: 60;
+}
+.datestatus{
+  color: black;
+  background-color:lightgray;
+  padding: 10;
+  border-radius: 20;      
+  align-self: flex-start;
+  text-align: justify;
+}
+.timestatus{
+  color: black;
+  background-color:lightgray;
+  padding: 10;
+  border-radius: 20;      
+  align-self: flex-start;
+  text-align: justify;
+}
+.botMessages{
+  color: black;
+  background-color: white;
+  padding: 10;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 20;
+  border-top-left-radius: 20;
+  border-top-right-radius: 20;
+  bottom: 23;
+  align-self: flex-start;
+  text-align: left;
+}
+.userMessages{
+  background-color: #4287f5;
+  color: white;
+  padding: 10;
+  margin-bottom: 10;
+  margin-right: 10;
+  border-bottom-left-radius: 20;
+  border-bottom-right-radius: 0;
+  border-top-left-radius: 20;
+  border-top-right-radius: 20;
+  align-self: flex-end;
+  text-align: right;
+}
+.textInput{
+  flex: 2;
+  padding-left: 15;
+}
+.responseContainer  {
+  flex-direction: column;
+  margin-top: 20;
+  margin-bottom: 20;
+}
+.inputContainer{
+  flex-direction: row;
+  background-color: #EEEFFA;
+}
+.suggestionWrapper{
+display: flex;
+flex-direction: column;
+justify-content: flex-end;   
+align-self: flex-start;
+text-align: left;
+padding: 10;
+border-bottom-left-radius: 20;
+border-bottom-right-radius: 0;
+border-top-left-radius: 20;
+border-top-right-radius: 20;
+width: windowWidth * 0.35;
+   
+}
+.suggestion{
+  background-color: #000066;
+  padding-left: 10;
+  padding: 10;
+  border-radius: 10;
+  margin-right: 10;
+  margin-bottom: 2;
+  width: auto;
+  display: flex;
+  align-self: flex-start;
+text-align: left;
+}
+.suggestionText{
+  font-size: 400;
+  color: #ffffff;
+}
+.responseCard{
+  width: windowWidth * 0.75;
+  background-color: white;
+  flex-direction: column;
+  padding: windowWidth * 0.05;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 20;
+  border-top-left-radius: 20;
+  border-top-right-radius: 20;
+}
+.reponseCardImage{
+  resize: contain;
+  aspect-ratio: 1;
+  flex: 1;
+}
+.responseCardButton {
+  background-color: #4287f5;
+  padding: 25;
+  border-radius: 10;
+  margin-top: 20;
+}
