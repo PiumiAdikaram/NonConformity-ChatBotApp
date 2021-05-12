@@ -54,11 +54,8 @@ const styles = StyleSheet.create({
       padding: 1,
       borderRadius: 20,  
       display: 'flex',
-      //alignItems: 'flex-end',
-
       alignSelf: 'flex-end',
-      //textAlign: 'right'
-    },
+      },
     botMessages: {
         color: 'black',
         backgroundColor: 'white',
@@ -69,7 +66,6 @@ const styles = StyleSheet.create({
         marginBottom: 0,
         borderTopRightRadius: 20,
         bottom: 23,
-        //width: windowWidth * 0.75,    
         alignSelf: 'flex-start',
         textAlign: 'left',
     },
@@ -83,7 +79,6 @@ const styles = StyleSheet.create({
         borderBottomRightRadius: 0,
         borderTopLeftRadius: 20,
         borderTopRightRadius: 20,
-        //width: windowWidth * 0.5,
         alignSelf: 'flex-end',
         textAlign: 'right'
     },
