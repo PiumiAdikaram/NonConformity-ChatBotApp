@@ -164,7 +164,7 @@ export default class App extends Component {
             messages: [],
             inputEnabled: true,
             createdAt: new Date(),
-            suggestedMessages: ["Hi","Tell me about ​non_conformity app","Type tag","Handler"],
+            suggestedMessages: ["Hi","What is nonConformity ​application","Type tag","Cause module","​Report Section"],
 
         };
       }
